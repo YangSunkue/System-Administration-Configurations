@@ -1,0 +1,23 @@
+# SSH 설정
+
+# 기본 설정
+Port 2222  # 보안을 위한 기본 포트 변경 (22 -> 2222)
+
+# 인증 설정
+PermitRootLogin no  # root 계정 직접 접속 차단
+PasswordAuthentication yes  # 비밀번호 인증 허용
+PubkeyAuthentication yes  # 공개키 인증 허용
+PermitEmptyPasswords no  # 빈 비밀번호로 설정된 계정의 로그인 차단
+
+# 접속 제한
+MaxAuthTries 5  # 최대 인증 시도 5회
+
+# 무의미한 세션 정리를 위한 설정
+ClientAliveInterval 300  # 클라이언트 응답 대기 시간 (5분)
+ClientAliveCountMax 2  # 무응답 허용 횟수, 초과 시 세션 강제 종료
+
+# 접속 허용 사용자 (화이트리스트 방식)
+AllowUsers user1 user2
+
+
+# 기타 설정 생략..
